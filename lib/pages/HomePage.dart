@@ -31,10 +31,11 @@ class HomePage extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(16),
                 child: Image.asset(
-                  'assets/images/assets imag1.jpg',
+                  'assets/images/image5.jpg',
+                
                   fit: BoxFit.cover,
                   width: 400,
-                  height: 240,
+                  height: 220,
                 ),
               ),
             ),
