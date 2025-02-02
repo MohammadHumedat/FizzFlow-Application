@@ -1,6 +1,6 @@
 import 'package:fizzflow/models/items.dart';
+import 'package:fizzflow/widgets/item_grid.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -43,43 +43,10 @@ class HomePage extends StatelessWidget {
                 itemCount: item.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  mainAxisSpacing: 20,
+                  mainAxisSpacing: 15,
                   crossAxisSpacing: 20,
                 ),
-                itemBuilder: (context, index) => Container(
-                  decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 244, 242, 242),
-                  ),
-                  child: Column(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(12),
-                        child: Image.network(
-                          item[index].imageurl,
-                          height: 130,
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 5,
-                      ),
-                      Text(
-                        item[index].name,
-                        style: GoogleFonts.playfair(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black54,
-                        ),
-                      ),
-                      Text(
-                        'price : ${item[index].price} \$',
-                        style: GoogleFonts.poppins(
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.deepOrange),
-                      ),
-                    ],
-                  ),
-                ),
+                itemBuilder: (context, index) => GridItem(item: item[index]),
               ),
             ),
           ],
