@@ -1,4 +1,6 @@
+import 'package:fizzflow/models/items.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -37,142 +39,47 @@ class HomePage extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             Expanded(
-              child: GridView(
+              child: GridView.builder(
+                itemCount: item.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   mainAxisSpacing: 20,
                   crossAxisSpacing: 20,
                 ),
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 244, 242, 242),
-                    ),
-                    child: Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Placeholder(
-                            color: Colors.red,
-                            fallbackHeight: 100,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 5,
-                        ),
-                        Text(
-                          'Bluebary Drink',
-                          style: TextStyle(
-                              fontSize: 22, fontWeight: FontWeight.w400),
-                        ),
-                        const SizedBox(height: 5),
-                        Text(
-                          'price: 5\$',
-                          style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.deepOrange),
-                        ),
-                      ],
-                    ),
+                itemBuilder: (context, index) => Container(
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 244, 242, 242),
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 244, 242, 242),
-                    ),
-                    child: Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Placeholder(
-                            color: Colors.red,
-                            fallbackHeight: 100,
-                          ),
+                  child: Column(
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(12),
+                        child: Image.network(
+                          item[index].imageurl,
+                          height: 130,
                         ),
-                        const SizedBox(
-                          height: 5,
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        item[index].name,
+                        style: GoogleFonts.playfair(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black54,
                         ),
-                        Text(
-                          'Bluebary Drink',
-                          style: TextStyle(
-                              fontSize: 22, fontWeight: FontWeight.w400),
-                        ),
-                        const SizedBox(height: 5),
-                        Text(
-                          'price: 5\$',
-                          style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.deepOrange),
-                        ),
-                      ],
-                    ),
+                      ),
+                      Text(
+                        'price : ${item[index].price} \$',
+                        style: GoogleFonts.poppins(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.deepOrange),
+                      ),
+                    ],
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 244, 242, 242),
-                    ),
-                    child: Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Placeholder(
-                            color: Colors.red,
-                            fallbackHeight: 100,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 5,
-                        ),
-                        Text(
-                          'Bluebary Drink',
-                          style: TextStyle(
-                              fontSize: 22, fontWeight: FontWeight.w400),
-                        ),
-                        const SizedBox(height: 5),
-                        Text(
-                          'price: 5\$',
-                          style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.deepOrange),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 244, 242, 242),
-                    ),
-                    child: Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Placeholder(
-                            color: Colors.red,
-                            fallbackHeight: 100,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 5,
-                        ),
-                        Text(
-                          'Bluebary Drink',
-                          style: TextStyle(
-                              fontSize: 22, fontWeight: FontWeight.w400),
-                        ),
-                        const SizedBox(height: 5),
-                        Text(
-                          'price: 5\$',
-                          style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.deepOrange),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+                ),
               ),
             ),
           ],
