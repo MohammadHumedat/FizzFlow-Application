@@ -1,3 +1,4 @@
+import 'package:fizzflow/pages/bottomNavBar.dart';
 import 'package:flutter/material.dart';
 import 'package:fizzflow/pages/HomePage.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
             seedColor: const Color.fromARGB(255, 90, 56, 148)),
         useMaterial3: false,
       ),
-      home: HomePage(),
+      home: Bottomnavbar(),
     );
   }
 }

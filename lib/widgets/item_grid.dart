@@ -10,37 +10,39 @@ class GridItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: const Color.fromARGB(255, 99, 97, 97),
+        color: const Color.fromARGB(255, 245, 243, 243),
       ),
-      child: Column(
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(15),
-            child: Image.network(
-              item.imageurl,
-              height: 130,
-              width: 190,
+      child: Center(
+        child: Column(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(15),
+              child: Image.network(
+                item.imageurl,
+                height: 130,
+                width: 190,
+              ),
             ),
-          ),
-          const SizedBox(
-            height: 5,
-          ),
-          Text(
-            item.name,
-            style: GoogleFonts.playfair(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              color: Colors.black54,
+            const SizedBox(
+              height: 5,
             ),
-          ),
-          Text(
-            'price : ${item.price} \$',
-            style: GoogleFonts.poppins(
-                fontSize: 14,
+            Text(
+              item.name,
+              style: GoogleFonts.playfair(
+                fontSize: 20,
                 fontWeight: FontWeight.bold,
-                color: Colors.deepOrange),
-          ),
-        ],
+                color: Colors.black54,
+              ),
+            ),
+            Text(
+              'price : ${item.price} \$',
+              style: GoogleFonts.poppins(
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.deepOrange),
+            ),
+          ],
+        ),
       ),
     );
   }
