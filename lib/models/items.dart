@@ -62,4 +62,8 @@ List<Items> item = [
       price: 11.0,
       imageurl:
           'https://www.thecocktaildb.com/images/media/drink/7j1z2e1487603414.jpg'),
+  Items(
+      name: 'cocktail',
+      price: 5.0,
+      imageurl: 'https://pngimg.com/d/cocktail_PNG31.png'),
 ];

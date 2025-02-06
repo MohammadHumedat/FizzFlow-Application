@@ -9,7 +9,7 @@ class GridItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 270, 
+      height: 270,
       width: 230,
       decoration: BoxDecoration(
         color: const Color.fromARGB(255, 255, 254, 254),
@@ -23,15 +23,17 @@ class GridItem extends StatelessWidget {
           ),
         ],
       ),
-
       child: Center(
         child: Column(
           children: [
+            const SizedBox(
+              height: 5,
+            ),
             ClipRRect(
               borderRadius: BorderRadius.circular(15),
               child: Image.network(
                 item.imageurl,
-                height: 130,
+                height: 125,
                 width: 190,
               ),
             ),
