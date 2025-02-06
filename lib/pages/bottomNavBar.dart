@@ -23,7 +23,7 @@ class _BottomnavbarState extends State<Bottomnavbar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 244, 242, 242),
+      backgroundColor: const Color.fromARGB(255, 246, 245, 245),
       body: selectedScreen[selectedIndex],
       appBar: AppBar(
         elevation: 1,

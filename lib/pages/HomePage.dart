@@ -9,20 +9,22 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(15.0),
-      child: Column(
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(25),
-            child: Image.asset(
-              'assets/images/freepik__upload__64505.jpg',
-              fit: BoxFit.fill,
-              width: 440,
-              height: 280,
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(25),
+              child: Image.asset(
+                'assets/images/image5.jpg',
+                fit: BoxFit.fill,
+                width: 440,
+                height: MediaQuery.of(context).size.height * 0.25,
+              ),
             ),
-          ),
-          const SizedBox(height: 30),
-          Expanded(
-            child: GridView.builder(
+            const SizedBox(height: 30),
+            GridView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
               itemCount: item.length,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
@@ -31,8 +33,8 @@ class HomePage extends StatelessWidget {
               ),
               itemBuilder: (context, index) => GridItem(item: item[index]),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

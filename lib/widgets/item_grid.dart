@@ -9,9 +9,21 @@ class GridItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 270, 
+      width: 230,
       decoration: BoxDecoration(
-        color: const Color.fromARGB(255, 245, 243, 243),
+        color: const Color.fromARGB(255, 255, 254, 254),
+        borderRadius: BorderRadius.circular(10),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.5),
+            spreadRadius: 2,
+            blurRadius: 5,
+            offset: const Offset(0, 3),
+          ),
+        ],
       ),
+
       child: Center(
         child: Column(
           children: [
