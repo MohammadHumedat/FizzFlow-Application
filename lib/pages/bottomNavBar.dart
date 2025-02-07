@@ -45,8 +45,7 @@ class _BottomnavbarState extends State<Bottomnavbar> {
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
               icon: Icon(Icons.favorite), label: 'Favourite'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.account_balance), label: 'Account'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Account'),
           BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
         ],
         currentIndex: selectedIndex,

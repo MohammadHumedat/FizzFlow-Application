@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 class FavouriteItem extends StatelessWidget {
   final Items item;
-  FavouriteItem({super.key, required this.item});
+  const FavouriteItem({super.key, required this.item});
   @override
   Widget build(BuildContext context) {
     return Card(
